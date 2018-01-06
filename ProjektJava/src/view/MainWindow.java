@@ -20,7 +20,7 @@ public class MainWindow extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("My First JavaFX App");
+        this.primaryStage.setTitle("Database Application");
 
         showMainView();
         //showAccessoryView();
@@ -37,7 +37,6 @@ public class MainWindow extends Application {
         mainLayout = loader.load();
         MainWindowController dupa = loader.getController();
         dupa.setMainWindow(this);
-        //Parent root = FXMLLoader.load(getClass().getResource("MainWindow.fxml"));
         Scene scene = new Scene(mainLayout, 800, 600);
         primaryStage.setScene(scene);
         primaryStage.show();

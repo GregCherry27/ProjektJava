@@ -11,8 +11,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 
 public class AccessoryViewController extends Database{
 
@@ -41,14 +39,14 @@ public class AccessoryViewController extends Database{
                 Connection conn = connectDatabase();
                 Statement stm = conn.createStatement();
 
-                List<ResultSet> lista = new ArrayList<>();
+                //List<ResultSet> lista = new ArrayList<>();
                 ResultSet res = stm.executeQuery("SELECT * FROM accessory");
                 if (res == null) return;
                 ObservableList<String> items = FXCollections.observableArrayList();
                 ObservableList<String> itemsID = FXCollections.observableArrayList();
                 while (res.next())
                 {
-                    lista.add(res);
+                    //lista.add(res);
                     itemsID.add(res.getString(1));
                     lvlid.setItems(itemsID);
                     items.add(res.getString(2));
@@ -61,4 +59,3 @@ public class AccessoryViewController extends Database{
             }
         }
 }
-
