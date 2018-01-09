@@ -4,7 +4,7 @@ package view;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.control.TabPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -14,7 +14,7 @@ import java.sql.SQLException;
 
 public class MainWindow extends Application {
     private Stage primaryStage;
-    private BorderPane mainLayout;
+    private TabPane mainLayout;
     //private TitledPane anchor;
 
     @Override
@@ -35,9 +35,10 @@ public class MainWindow extends Application {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(MainWindow.class.getResource("/view/MainWindow.fxml"));
         mainLayout = loader.load();
-        MainWindowController dupa = loader.getController();
-        dupa.setMainWindow(this);
-        Scene scene = new Scene(mainLayout, 800, 600);
+        MainWindowController mwc = loader.getController();
+        mwc.setMainWindow(this);
+        mwc.showProductTable();
+        Scene scene = new Scene(mainLayout);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
@@ -46,7 +47,10 @@ public class MainWindow extends Application {
     {
         FXMLLoader loader = new FXMLLoader();
         Pane mainItems = loader.load(MainWindow.class.getResource("/view/AccessoryView.fxml"));
-        mainLayout.setCenter(mainItems);
+        //mainLayout.setCenter(mainItems);
+        Scene scene = new Scene(mainItems, 800, 600);
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
     public static void main(String[] args) throws SQLException

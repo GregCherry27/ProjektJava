@@ -77,15 +77,13 @@ public class Database {
         }
     }
 
-    private void getRecord(String nameTable, String nameRecord, String record) throws SQLException
+    public String getString(String nameRecord, String nameTable) throws SQLException
     {
-        try {
-            Connection conn = connectDatabase();
-            ResultSet rs = conn.createStatement().executeQuery("SELECT " + record + " FROM " + nameTable + " WHERE name = " + nameRecord);
-        } catch (Exception ex)
-        {
-            System.out.println("Błąd setString(): " + ex);
-        }
+        String text = "";
+        Connection conn = connectDatabase();
+        ResultSet rs = conn.createStatement().executeQuery("SELECT " + nameRecord + " FROM " + nameTable);
+        text = rs.getString(nameRecord);
+        return text;
     }
 }
 
