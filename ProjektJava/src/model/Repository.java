@@ -16,10 +16,10 @@ public class Repository extends Database{
     private ObservableList<Surface> repSurface = FXCollections.observableArrayList();
     private ObservableList<Accessory> repAccessories = FXCollections.observableArrayList();
 
-    public Repository()
+    /*public Repository()
     {
         loadAll();
-    }
+    }*/
 
     private Repository repo;
 

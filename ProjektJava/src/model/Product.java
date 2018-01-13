@@ -36,7 +36,7 @@ public class Product {
         this.dosage = dosage;
     }
 
-    public  Product()
+    public Product()
     {
         this.name = "";
         this.temperature = 0;

@@ -8,6 +8,7 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -67,22 +68,35 @@
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <TableView layoutX="99.0" layoutY="198.0" prefHeight="283.0" prefWidth="602.0">
+                  <TableView fx:id="tableModel" layoutX="99.0" layoutY="198.0" prefHeight="283.0" prefWidth="602.0">
                     <columns>
-                      <TableColumn prefWidth="150.0" text="Nazwa" />
-                      <TableColumn prefWidth="150.0" text="Powierzchnia" />
-                        <TableColumn prefWidth="150.0" text="Produkt" />
-                        <TableColumn prefWidth="150.0" text="Akcesoria" />
+                      <TableColumn fx:id="nameColumn" prefWidth="150.0" text="Nazwa" />
+                      <TableColumn fx:id="surfaceColumn" prefWidth="150.0" text="Powierzchnia" />
+                        <TableColumn fx:id="productColumn" prefWidth="150.0" text="Produkt" />
+                        <TableColumn fx:id="accessoryColumn" prefWidth="150.0" text="Akcesoria" />
                     </columns>
                   </TableView>
                </children></AnchorPane>
          </content></Tab>
       <Tab text="Powierzchnie">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="tableSurface" layoutX="113.0" layoutY="216.0" prefHeight="256.0" prefWidth="618.0">
+                    <columns>
+                      <TableColumn fx:id="columnName" prefWidth="75.0" text="Nazwa" />
+                      <TableColumn fx:id="commentsColumn" prefWidth="75.0" text="Komentarz" />
+                    </columns>
+                  </TableView>
+                  <Button layoutX="319.0" layoutY="161.0" mnemonicParsing="false" text="Dodaj" />
+                  <Label layoutX="113.0" layoutY="53.0" text="Nazwa:" />
+                  <Label layoutX="448.0" layoutY="53.0" text="Komentarz" />
+                  <TextField layoutX="113.0" layoutY="96.0" />
+                  <TextArea layoutX="448.0" layoutY="79.0" prefHeight="97.0" prefWidth="287.0" />
+               </children></AnchorPane>
         </content>
       </Tab>
-      <Tab text="Produkty">
+      <Tab fx:id="productWindow" text="Produkty">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" stylesheets="@MainWindowStyle.css">
                <children>
@@ -107,7 +121,17 @@
       </Tab>
       <Tab text="Akcesoria">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="tableAccessory" layoutX="287.0" layoutY="186.0" prefHeight="200.0" prefWidth="201.0">
+                    <columns>
+                      <TableColumn fx:id="nameColumn" prefWidth="199.0" text="Nazwa" />
+                    </columns>
+                  </TableView>
+                  <Button layoutX="362.0" layoutY="111.0" mnemonicParsing="false" text="Button" />
+                  <Label layoutX="353.0" layoutY="37.0" text="Nazwa:" />
+                  <TextField layoutX="313.0" layoutY="67.0" />
+               </children></AnchorPane>
         </content>
       </Tab>
   </tabs>
