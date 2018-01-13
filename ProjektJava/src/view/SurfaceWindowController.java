@@ -16,9 +16,9 @@ public class SurfaceWindowController extends Repository{
     @FXML
     TableColumn<Surface, String> commentsColumn;
 
-    private MainWindow mainWindow;
+    private view.MainWindow mainWindow;
 
-    public void setMainWindow(MainWindow mWindow)
+    public void setMainWindow(view.MainWindow mWindow)
     {
         mainWindow = mWindow;
     }

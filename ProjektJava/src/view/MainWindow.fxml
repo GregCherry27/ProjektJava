@@ -15,7 +15,7 @@
 
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@MainWindowStyle.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MainWindowController">
   <tabs>
-    <Tab text="Wystaw">
+    <Tab onSelectionChanged="#showModelTable" text="Wystaw">
          <content>
             <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="800.0">
                <children>
@@ -98,7 +98,7 @@
       </Tab>
       <Tab fx:id="productWindow" text="Produkty">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" stylesheets="@MainWindowStyle.css">
+          <AnchorPane minHeight="0.0" minWidth="0.0" onMouseClicked="#showModelTable" prefHeight="180.0" prefWidth="200.0" stylesheets="@MainWindowStyle.css">
                <children>
                   <TableView fx:id="tableProduct" editable="true" layoutX="93.0" layoutY="194.0" prefHeight="300.0" prefWidth="602.0">
                      <columns>

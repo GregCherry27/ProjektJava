@@ -10,6 +10,7 @@ import model.Repository;
 
 public class MainWindowController extends Repository{
 
+
     @FXML
     TableView<Model> tableModel;
     @FXML
@@ -23,9 +24,9 @@ public class MainWindowController extends Repository{
     @FXML
     Button showBt;
 
-    private MainWindow mainWindow;
+    private view.MainWindow mainWindow;
 
-    public void setMainWindow(MainWindow mWindow)
+    public void setMainWindow(view.MainWindow mWindow)
     {
         mainWindow = mWindow;
     }

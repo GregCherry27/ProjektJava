@@ -98,25 +98,7 @@
       </Tab>
       <Tab fx:id="productWindow" text="Produkty">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" stylesheets="@MainWindowStyle.css">
-               <children>
-                  <TableView fx:id="tableProduct" editable="true" layoutX="93.0" layoutY="194.0" prefHeight="300.0" prefWidth="602.0">
-                     <columns>
-                        <TableColumn fx:id="nameColumn" prefWidth="200.0" text="Nazwa" />
-                        <TableColumn fx:id="tempColumn" minWidth="0.0" prefWidth="200.0" text="Temperatura" />
-                        <TableColumn fx:id="dosageColumn" minWidth="0.0" prefWidth="200.0" text="Dozowanie" />
-                     </columns>
-                  </TableView>
-                  <Label layoutX="160.0" layoutY="34.0" text="Nazwa:" />
-                  <TextField layoutX="120.0" layoutY="64.0" />
-                  <Label layoutX="337.0" layoutY="34.0" text="Temperatura:" />
-                  <Label layoutX="539.0" layoutY="34.0" text="Dozowanie:" />
-                  <TextField layoutX="326.0" layoutY="64.0" />
-                  <TextField layoutX="520.0" layoutY="64.0" />
-                  <Button layoutX="368.0" layoutY="104.0" mnemonicParsing="false" text="Dodaj" />
-                  <Button layoutX="305.0" layoutY="508.0" mnemonicParsing="false" text="Edytuj" />
-                  <Button layoutX="430.0" layoutY="508.0" mnemonicParsing="false" text="Usuń" />
-               </children></AnchorPane>
+            <fx:include fx:id="productWindowTab" source="ProductWindow.fxml"/>
         </content>
       </Tab>
       <Tab text="Akcesoria">

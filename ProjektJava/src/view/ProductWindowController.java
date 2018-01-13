@@ -18,9 +18,9 @@ public class ProductWindowController extends Repository{
     @FXML
     TableColumn<Product, Double> dosageColumn;
 
-    private MainWindow mainWindow;
+    private view.MainWindow mainWindow;
 
-    public void setMainWindow(MainWindow mWindow)
+    public void setMainWindow(view.MainWindow mWindow)
     {
         mainWindow = mWindow;
     }
