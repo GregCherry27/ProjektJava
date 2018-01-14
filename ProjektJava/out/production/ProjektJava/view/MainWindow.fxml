@@ -9,7 +9,7 @@
       <HBox prefHeight="40.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
             <Button mnemonicParsing="false" onAction="#showModelView" prefHeight="40.0" prefWidth="200.0" text="Model" />
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" text="Powierzchnia" />
+            <Button mnemonicParsing="false" onAction="#showSurfaceView" prefHeight="40.0" prefWidth="200.0" text="Powierzchnia" />
             <Button mnemonicParsing="false" onAction="#showProductView" prefHeight="40.0" prefWidth="200.0" text="Produkty" />
             <Button mnemonicParsing="false" onAction="#showAccessoryView" prefHeight="40.0" prefWidth="200.0" text="Akcesoria" />
          </children>

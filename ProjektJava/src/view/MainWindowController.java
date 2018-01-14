@@ -45,6 +45,18 @@ public class MainWindowController extends Repository{
     }
 
     @FXML
+    public void showAccessoryView() throws IOException
+    {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(view.MainWindow.class.getResource("/view/AccessoryWindow.fxml"));
+        AnchorPane mainItems = loader.load();
+        AccessoryWindowController awc = loader.getController();
+        awc.setMainWindow(mainWindow);
+        awc.showAccessoryTable();
+        mainBorderPane.setCenter(mainItems);
+    }
+
+    @FXML
     public void showModelView() throws IOException
     {
         FXMLLoader loader = new FXMLLoader();
@@ -57,14 +69,16 @@ public class MainWindowController extends Repository{
     }
 
     @FXML
-    public void showAccessoryView() throws IOException
+    public void showSurfaceView() throws IOException
     {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(view.MainWindow.class.getResource("/view/AccessoryWindow.fxml"));
+        loader.setLocation(view.MainWindow.class.getResource("/view/SurfaceWindow.fxml"));
         AnchorPane mainItems = loader.load();
-        AccessoryWindowController awc = loader.getController();
-        awc.setMainWindow(mainWindow);
-        awc.showAccessoryTable();
+        SurfaceWindowController swc = loader.getController();
+        swc.setMainWindow(mainWindow);
+        swc.showSurfaceTable();
         mainBorderPane.setCenter(mainItems);
     }
+
+
 }

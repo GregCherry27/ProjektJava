@@ -84,7 +84,7 @@ public class Repository extends Database{
                     Surface newSurface = new Surface();
                     String nameSurface = res.getString("name");
                     newSurface.setName(nameSurface);
-                    String commentsSurface = res.getString("surface");
+                    String commentsSurface = res.getString("comments");
                     newSurface.setComments(commentsSurface);
                     repSurface.add(newSurface);
                 }
@@ -112,6 +112,12 @@ public class Repository extends Database{
                 }
             }
         }
+    }
+
+    public void refreshAccessories()
+    {
+        repAccessories.clear();
+        getAccessory();
     }
 
     public  ObservableList<Product> getProduct(){

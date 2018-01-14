@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="view.SurfaceWindowController" prefHeight="400.0" prefWidth="600.0">
-    <TableView fx:id="tableSurface" editable="true" layoutX="93.0" layoutY="194.0" prefHeight="300.0" prefWidth="602.0">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.SurfaceWindowController">
+    <TableView fx:id="tableSurface" editable="true" layoutX="7.0" layoutY="93.0" prefHeight="227.0" prefWidth="602.0">
         <columns>
             <TableColumn fx:id="nameColumn" prefWidth="200.0" text="Nazwa" />
-            <TableColumn fx:id="commentsColumn" minWidth="0.0" prefWidth="200.0" text="Komentarz" />
+            <TableColumn fx:id="commentsColumn" minWidth="0.0" prefWidth="401.0" text="Komentarz" />
         </columns>
     </TableView>
 

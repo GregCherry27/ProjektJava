@@ -45,35 +45,14 @@ public class Database {
         }
     }
 
-    /*public String getTable(String nameTable) throws SQLException
-    {
-        try
-        {
-            Connection conn = connectDatabase();
-            Statement stm = conn.createStatement();
-
-            List<ResultSet> lista = new ArrayList<>();
-            ResultSet res = stm.executeQuery("SELECT * FROM "+ nameTable);
-            if(res == null) return;
-            while(res.next())
-            {
-                lista.add(res);
-            }
-        }
-        catch(Exception ex)
-        {
-            System.out.println("Blad getTable(): "+ex);
-        }
-    }*/
-
-    private void deleteRecord(String nameTable, String nameValue) throws SQLException
+    public void deleteRecord(String nameTable, String nameValue) throws SQLException
     {
         try {
             Connection conn = connectDatabase();
-            conn.createStatement().executeUpdate("DELETE FROM " + nameTable + " WHERE name = " + nameValue);
+            conn.createStatement().executeUpdate("DELETE FROM " + nameTable + " WHERE name = '" + nameValue + "'");
         } catch (Exception ex)
         {
-            System.out.println("Błąd setString(): " + ex);
+            System.out.println("Błąd deleteRecord(): " + ex);
         }
     }
 
@@ -84,6 +63,18 @@ public class Database {
         ResultSet rs = conn.createStatement().executeQuery("SELECT " + nameRecord + " FROM " + nameTable);
         text = rs.getString(nameRecord);
         return text;
+    }
+
+    public void updateString(String nameRecord, String nameTable, String newValue) throws SQLException
+    {
+        Connection conn = connectDatabase();
+        conn.createStatement().executeUpdate("UPDATE " + nameTable + " SET name = " + newValue + " WHERE name = " + nameRecord);
+    }
+
+    public void addProduct(String n, Double t, Double d) throws SQLException
+    {
+        Connection conn = connectDatabase();
+        conn.createStatement().executeUpdate("INSERT INTO product(name, temperature, dosage) VALUES ('" + n + "', " + t + ", " + d);
     }
 }
 
