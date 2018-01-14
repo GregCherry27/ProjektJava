@@ -34,7 +34,7 @@ public class Database {
         }
     }
 
-    public void setDouble(String tableName, double valueDouble) throws SQLException
+    /*public void setDouble(String tableName, double valueDouble) throws SQLException
     {
         try {
             Connection conn = connectDatabase();
@@ -43,7 +43,7 @@ public class Database {
         {
             System.out.println("Błąd setString(): " + ex);
         }
-    }
+    }*/
 
     public void deleteRecord(String nameTable, String nameValue) throws SQLException
     {
@@ -74,7 +74,13 @@ public class Database {
     public void addProduct(String n, Double t, Double d) throws SQLException
     {
         Connection conn = connectDatabase();
-        conn.createStatement().executeUpdate("INSERT INTO product(name, temperature, dosage) VALUES ('" + n + "', " + t + ", " + d);
+        conn.createStatement().executeUpdate("INSERT INTO product VALUES ('" + n + "', " + t + ", " + d + ")");
+    }
+
+    public void addSurface(String name, String comment) throws SQLException
+    {
+        Connection conn = connectDatabase();
+        conn.createStatement().executeUpdate("INSERT INTO surface VALUES ('" + name + "', '" + comment + "')");
     }
 }
 

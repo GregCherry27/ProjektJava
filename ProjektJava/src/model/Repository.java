@@ -114,12 +114,6 @@ public class Repository extends Database{
         }
     }
 
-    public void refreshAccessories()
-    {
-        repAccessories.clear();
-        getAccessory();
-    }
-
     public  ObservableList<Product> getProduct(){
         ObservableList<Product> pr = FXCollections.observableArrayList();
         try {
@@ -158,6 +152,30 @@ public class Repository extends Database{
             e.printStackTrace();
         }
         return md = repModel;
+    }
+
+    public void refreshAccessories()
+    {
+        repAccessories.clear();
+        getAccessory();
+    }
+
+    public void refreshProduct()
+    {
+        repProduct.clear();
+        getProduct();
+    }
+
+    public void refreshModel()
+    {
+        repModel.clear();
+        getModel();
+    }
+
+    public void refreshSurface()
+    {
+        repSurface.clear();
+        getSurface();
     }
 }
 

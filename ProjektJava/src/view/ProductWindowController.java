@@ -2,6 +2,7 @@ package view;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TablePosition;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -52,27 +53,26 @@ public class ProductWindowController extends Repository{
         String name = nameTBox.getText().trim();
         Double temperature = Double.valueOf(temperatureTBox.getText());
         Double dosage = Double.valueOf(dosageTBox.getText());
-
         addProduct(name,temperature,dosage);
-
-        refreshAccessories();
+        refreshProduct();
         nameTBox.clear();
         temperatureTBox.clear();
         dosageTBox.clear();
     }
 
-   /* @FXML
-    public void deleteAccessory() throws SQLException
+    @FXML
+    public void deleteProduct() throws SQLException
     {
-        TablePosition<Accessory, String> positionAccessory = tableAccessory.getSelectionModel().getSelectedCells().get(0);
+        TablePosition<Product, String> positionAccessory = tableProduct.getSelectionModel().getSelectedCells().get(0);
         int row = positionAccessory.getRow();
         String selectedName = String.valueOf( nameColumn.getCellObservableValue(row).getValue());
-        deleteRecord("accessory", selectedName);
-        refreshAccessories();
+        deleteRecord("product", selectedName);
+        refreshProduct();
     }
 
-    @FXML
-    public void editNameAccessory() throws SQLException
+    //TODO: dokończyć
+    /*@FXML
+    public void editNameProduct() throws SQLException
     {
         TablePosition<Accessory, String> positionAccessory = tableAccessory.getSelectionModel().getSelectedCells().get(0);
         int row = positionAccessory.getRow();

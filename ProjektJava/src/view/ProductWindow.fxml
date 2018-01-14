@@ -7,23 +7,23 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="518.0" prefWidth="600.0" stylesheets="@MainWindowStyle.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ProductWindowController">
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="560.0" prefWidth="800.0" stylesheets="@MainWindowStyle.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ProductWindowController">
         <children>
-            <TableView fx:id="tableProduct" editable="true" layoutY="161.0" prefHeight="153.0" prefWidth="600.0">
+            <TableView fx:id="tableProduct" editable="true" layoutX="138.0" layoutY="192.0" prefHeight="153.0" prefWidth="609.0">
                 <columns>
                     <TableColumn fx:id="nameColumn" prefWidth="200.0" text="Nazwa" />
                     <TableColumn fx:id="tempColumn" minWidth="0.0" prefWidth="200.0" text="Temperatura" />
                     <TableColumn fx:id="dosageColumn" minWidth="0.0" prefWidth="200.0" text="Dozowanie" />
                 </columns>
             </TableView>
-            <Label layoutX="86.0" layoutY="40.0" text="Nazwa:" />
-            <TextField fx:id="nameTBox" layoutX="46.0" layoutY="77.0" />
-            <Label layoutX="242.0" layoutY="40.0" text="Temperatura:" />
-            <Label layoutX="431.0" layoutY="40.0" text="Dozowanie:" />
-            <TextField fx:id="temperatureTBox" layoutX="226.0" layoutY="77.0" />
-            <TextField fx:id="dosageTBox" layoutX="400.0" layoutY="77.0" />
-            <Button layoutX="269.0" layoutY="117.0" mnemonicParsing="false" onMouseClicked="#addProduct" text="Dodaj" />
-            <Button layoutX="163.0" layoutY="314.0" mnemonicParsing="false" text="Edytuj" />
-            <Button layoutX="372.0" layoutY="314.0" mnemonicParsing="false" text="Usuń" />
+            <Label layoutX="127.0" layoutY="70.0" text="Nazwa:" />
+            <TextField fx:id="nameTBox" layoutX="121.0" layoutY="108.0" />
+            <Label layoutX="313.0" layoutY="70.0" text="Temperatura:" />
+            <Label layoutX="503.0" layoutY="70.0" text="Dozowanie:" />
+            <TextField fx:id="temperatureTBox" layoutX="313.0" layoutY="108.0" />
+            <TextField fx:id="dosageTBox" layoutX="503.0" layoutY="108.0" />
+            <Button layoutX="400.0" layoutY="144.0" mnemonicParsing="false" onMouseClicked="#addProduct" text="Dodaj" />
+            <Button layoutX="237.0" layoutY="377.0" mnemonicParsing="false" text="Edytuj" />
+            <Button layoutX="521.0" layoutY="377.0" mnemonicParsing="false" onMouseClicked="#deleteProduct" text="Usuń" />
         </children>
 </AnchorPane>
