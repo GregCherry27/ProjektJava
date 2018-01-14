@@ -16,11 +16,6 @@ public class Repository extends Database{
     private ObservableList<Surface> repSurface = FXCollections.observableArrayList();
     private ObservableList<Accessory> repAccessories = FXCollections.observableArrayList();
 
-    /*public Repository()
-    {
-        loadAll();
-    }*/
-
     private Repository repo;
 
     public void setRepository(Repository rep)
@@ -107,10 +102,10 @@ public class Repository extends Database{
                     Model newModel = new Model();
                     String nameModel = res.getString("name");
                     newModel.setName(nameModel);
-                    String productModel = res.getString("product");
-                    newModel.setProduct(productModel);
-                    String accessoriesModel = res.getString("product");
-                    newModel.setProduct(accessoriesModel);
+                    String productModel = res.getString("surface");
+                    newModel.setSurface(productModel);
+                    String accessoriesModel = res.getString("accessories");
+                    newModel.setAccessories(accessoriesModel);
                     String surfaceModel = res.getString("product");
                     newModel.setProduct(surfaceModel);
                     repModel.add(newModel);

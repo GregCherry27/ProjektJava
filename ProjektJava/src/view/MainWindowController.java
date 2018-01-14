@@ -1,28 +1,15 @@
 package view;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
-import model.Model;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 import model.Repository;
 
+import java.io.IOException;
+
 public class MainWindowController extends Repository{
-
-
-    @FXML
-    TableView<Model> tableModel;
-    @FXML
-    TableColumn<Model, String> nameColumn;
-    @FXML
-    TableColumn<Model, String> surfaceColumn;
-    @FXML
-    TableColumn<Model, String> productColumn;
-    @FXML
-    TableColumn<Model, String> accessoryColumn;
-    @FXML
-    Button showBt;
 
     private view.MainWindow mainWindow;
 
@@ -31,38 +18,53 @@ public class MainWindowController extends Repository{
         mainWindow = mWindow;
     }
 
-    @FXML
-    public void showModelTable()
+    private Stage mainStage;
+
+    public void setMainStage(Stage pr)
     {
-        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-
-        surfaceColumn.setCellValueFactory(new PropertyValueFactory<>("surface"));
-
-        productColumn.setCellValueFactory(new PropertyValueFactory<>("product"));
-
-        accessoryColumn.setCellValueFactory(new PropertyValueFactory<>("accessory"));
-
-        tableModel.setItems(getModel());
+        mainStage = pr;
     }
-    /*@FXML
-    public ProductWindowController productWindowController;
+
+    private BorderPane mainBorderPane;
+
+    public void setMainBorderPane(BorderPane bp)
+    {
+        mainBorderPane = bp;
+    }
+
     @FXML
-    public Window productWindow;
+    public void showProductView() throws IOException
+    {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(view.MainWindow.class.getResource("/view/ProductWindow.fxml"));
+        AnchorPane mainItems = loader.load();
+        ProductWindowController pwc = loader.getController();
+        pwc.setMainWindow(mainWindow);
+        pwc.showProductTable();
+        mainBorderPane.setCenter(mainItems);
+    }
 
-    /*@FXML
-    public SurfaceWindowController surfaceWindowController;
     @FXML
-    public Window surfaceWindow;*/
+    public void showModelView() throws IOException
+    {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(view.MainWindow.class.getResource("/view/ModelWindow.fxml"));
+        AnchorPane mainItems = loader.load();
+        ModelWindowController mwc = loader.getController();
+        mwc.setMainWindow(mainWindow);
+        mwc.showModelTable();
+        mainBorderPane.setCenter(mainItems);
+    }
 
-    /*@FXML
-    public AccessoryWindowController accessoryWindowController;
     @FXML
-    public Window accessoryWindow;*/
-
-
-
-
-
-
-
+    public void showAccessoryView() throws IOException
+    {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(view.MainWindow.class.getResource("/view/AccessoryWindow.fxml"));
+        AnchorPane mainItems = loader.load();
+        AccessoryWindowController awc = loader.getController();
+        awc.setMainWindow(mainWindow);
+        awc.showAccessoryTable();
+        mainBorderPane.setCenter(mainItems);
+    }
 }
