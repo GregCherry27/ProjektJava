@@ -26,11 +26,9 @@ public class Pdftest extends Repository {
 
 
     public static void gen(ObservableList<Model> modelList){
-        // TODO code application logic here
 
         Document document = new Document();
-        ObservableList<Model> model = modelList;
-
+        int size = modelList.size();
 
         try {
             PdfWriter.getInstance(document,
@@ -101,14 +99,14 @@ public class Pdftest extends Repository {
 
             //==========================
 
-            for (int i = 0; i < modelList.size(); i++)
+            for (int i = 0; i < size; i++)
                 spis_lista.add(new ListItem(modelList.get(i).getName()));
 
             document.add(spis_lista);
 
 
             //koniec spisu treści
-            for (int i = 0; i < spis_lista.size(); i++) {
+            for (int i = 0; i < size; i++) {
                 document.newPage();
 
 
@@ -129,7 +127,7 @@ public class Pdftest extends Repository {
                 tabela_i.setSpacingBefore(30f);
                 tabela_i.setSpacingAfter(10f);
 
-                PdfPCell kom_i = new PdfPCell(new Paragraph(model.get(i).getSurface()));
+                PdfPCell kom_i = new PdfPCell(new Paragraph(modelList.get(i).getSurface()));
                 kom_i.setHorizontalAlignment(Element.ALIGN_CENTER);
                 kom_i.setBorder(Rectangle.NO_BORDER);
                 tabela_i.addCell(kom_i);
@@ -145,14 +143,14 @@ public class Pdftest extends Repository {
 
                 tabela_mycia.setWidthPercentage(100);
 
-                PdfPCell kom_pow = new PdfPCell(new Paragraph(model.get(i).getProduct()));
+                PdfPCell kom_pow = new PdfPCell(new Paragraph(modelList.get(i).getProduct()));
                 kom_pow.setHorizontalAlignment(Element.ALIGN_CENTER);
                 kom_pow.setBorder(Rectangle.NO_BORDER);
                 tabela_mycia.addCell(kom_pow);
                 //
 
 
-                PdfPCell kom_op = new PdfPCell(new Paragraph(model.get(i).getAccessories()));
+                PdfPCell kom_op = new PdfPCell(new Paragraph(modelList.get(i).getAccessories()));
                 kom_op.setBorder(Rectangle.NO_BORDER);
                 tabela_mycia.addCell(kom_op);
 

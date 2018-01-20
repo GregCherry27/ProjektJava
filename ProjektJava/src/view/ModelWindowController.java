@@ -35,6 +35,8 @@ public class ModelWindowController extends Repository{
 
     private view.MainWindow mainWindow;
 
+    private ObservableList<Model> OlModel = getModel();
+
     public void setMainWindow(view.MainWindow mWindow)
     {
         mainWindow = mWindow;
@@ -51,7 +53,7 @@ public class ModelWindowController extends Repository{
 
         accessoryColumn.setCellValueFactory(new PropertyValueFactory<>("accessories"));
 
-        tableModel.setItems(getModel());
+        tableModel.setItems(OlModel);
 
         fillComboBSurface();
         fillComboBProduct();
@@ -128,8 +130,9 @@ public class ModelWindowController extends Repository{
     }
     @FXML
     public void generatePdf()
-    {   ObservableList<Model> model = getModel(); //gettem lapiemy ObservableList i przekazujemy do PDF
-        Pdftest.gen(model);
+    {
+        Pdftest.gen(OlModel);
+        refreshModel();
     }
 
 }

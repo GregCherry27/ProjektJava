@@ -32,6 +32,8 @@ public class MainWindowController extends Repository{
         mainBorderPane = bp;
     }
 
+
+
     @FXML
     public void showProductView() throws IOException
     {
@@ -79,6 +81,4 @@ public class MainWindowController extends Repository{
         swc.showSurfaceTable();
         mainBorderPane.setCenter(mainItems);
     }
-
-
 }

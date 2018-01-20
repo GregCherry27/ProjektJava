@@ -23,7 +23,7 @@ public class Repository extends Database{
          this.repo = rep;
     }
 
-    public void loadAll()
+    /*public void loadAll()
     {
         try
         {
@@ -35,7 +35,7 @@ public class Repository extends Database{
         {
             System.out.println("Error loadAll(): " + ex);
         }
-    }
+    }*/
 
 
     public void loadProduct() throws SQLException
