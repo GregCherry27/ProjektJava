@@ -7,7 +7,6 @@ public class Model {
     private String surface;
 
 
-
     public Model(String name, String product, String accessories, String surface) {
         this.name = name;
         this.product = product;

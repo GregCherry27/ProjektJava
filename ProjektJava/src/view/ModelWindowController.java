@@ -34,13 +34,11 @@ public class ModelWindowController extends Repository{
     private TextField tfName;
 
     private view.MainWindow mainWindow;
-    private model.Repository repository;
 
     public void setMainWindow(view.MainWindow mWindow)
     {
         mainWindow = mWindow;
     }
-
 
     @FXML
     public void showModelTable()
@@ -58,13 +56,6 @@ public class ModelWindowController extends Repository{
         fillComboBSurface();
         fillComboBProduct();
         fillChoiceAccessory();
-        //Dopisz catch SQL, to wyswietla liste produktow, getter tu nie jest potrzebny poniewaz
-        //ladujemy tu tylko produkty
-        try{
-        tableModel.setItems(loadModel());}
-        catch(SQLException e){}
-
-
     }
 
     public void fillComboBSurface() {
@@ -140,6 +131,5 @@ public class ModelWindowController extends Repository{
     {   ObservableList<Model> model = getModel(); //gettem lapiemy ObservableList i przekazujemy do PDF
         Pdftest.gen(model);
     }
-
 
 }
