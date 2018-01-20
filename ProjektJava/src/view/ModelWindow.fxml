@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="560.0" prefWidth="800.0" stylesheets="@MainWindowStyle.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ModelWindowController">
+<AnchorPane prefHeight="560.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ModelWindowController">
    <children>
       <TableView fx:id="tableModel" layoutX="132.0" layoutY="250.0" prefHeight="200.0" prefWidth="537.0">
         <columns>
@@ -15,5 +19,17 @@
             <TableColumn fx:id="accessoryColumn" prefWidth="138.0" text="Akcesoria" />
         </columns>
       </TableView>
+      <Button fx:id="btPDF" layoutX="358.0" layoutY="481.0" mnemonicParsing="false" text="PDF" />
+      <Label layoutX="101.0" layoutY="89.0" text="Nazwa" />
+      <Label layoutX="251.0" layoutY="89.0" text="Powierzchnia" />
+      <Label layoutX="407.0" layoutY="89.0" text="Produkt" />
+      <Label layoutX="609.0" layoutY="97.0" text="Akcesoria" />
+      <TextField fx:id="tfName" layoutX="58.0" layoutY="137.0" />
+      <ComboBox fx:id="cbSurface" layoutX="238.0" layoutY="137.0" prefWidth="150.0" />
+      <ComboBox fx:id="cbProduct" layoutX="408.0" layoutY="137.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="cobAccessory" layoutX="585.0" layoutY="137.0" prefWidth="150.0" />
+      <Button fx:id="btnAddModel" layoutX="111.0" layoutY="187.0" mnemonicParsing="false" onMouseClicked="#addModel" text="Dodaj" />
+      <Button layoutX="212.0" layoutY="187.0" mnemonicParsing="false" onMouseClicked="#deleteModel" text="Usuń" />
+      <Button layoutX="286.0" layoutY="187.0" mnemonicParsing="false" text="Edytuj" />
    </children>
 </AnchorPane>

@@ -34,17 +34,6 @@ public class Database {
         }
     }
 
-    /*public void setDouble(String tableName, double valueDouble) throws SQLException
-    {
-        try {
-            Connection conn = connectDatabase();
-            conn.createStatement().executeUpdate("INSERT INTO " + tableName + "(temperature) VALUES ('" + valueDouble +"')");
-        } catch (Exception ex)
-        {
-            System.out.println("Błąd setString(): " + ex);
-        }
-    }*/
-
     public void deleteRecord(String nameTable, String nameValue) throws SQLException
     {
         try {
@@ -81,6 +70,12 @@ public class Database {
     {
         Connection conn = connectDatabase();
         conn.createStatement().executeUpdate("INSERT INTO surface VALUES ('" + name + "', '" + comment + "')");
+    }
+
+    public void addModel(String name, String surface, String product, String accessory) throws SQLException
+    {
+        Connection conn = connectDatabase();
+        conn.createStatement().executeUpdate("INSERT INTO model VALUES ('" + name + "', '" + product + "', '" + accessory + "', '" + surface + "')");
     }
 }
 

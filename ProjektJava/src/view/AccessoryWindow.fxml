@@ -7,7 +7,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="560.0" prefWidth="800.0" stylesheets="@MainWindowStyle.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AccessoryWindowController">
+<AnchorPane prefHeight="560.0" prefWidth="800.0" stylesheets="@MainWindowStyle.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AccessoryWindowController">
     <TableView fx:id="tableAccessory" editable="true" layoutX="274.0" layoutY="164.0" prefHeight="219.0" prefWidth="254.0">
         <columns>
             <TableColumn fx:id="nameColumn" prefWidth="253.0" text="Nazwa" />
