@@ -92,11 +92,12 @@ public class Repository extends Database{
         }
     }
 
-    public void loadModel() throws SQLException
+    //Zmienina konstrukcja loadmodel, returnuje repModel, i wywoluje ladowanie kontaktow do listy w ModelWindowController
+    public ObservableList<Model> loadModel() throws SQLException
     {
         try (Connection conn = connectDatabase(); Statement stm = conn.createStatement()) {
             try(ResultSet res = stm.executeQuery("SELECT * FROM `model`")){
-                if(res == null) return;
+                if(res == null) return null;
                 while(res.next())
                 {
                     Model newModel = new Model();
@@ -109,8 +110,9 @@ public class Repository extends Database{
                     String surfaceModel = res.getString("product");
                     newModel.setProduct(surfaceModel);
                     repModel.add(newModel);
+
                 }
-            }
+            }return repModel;
         }
     }
 
@@ -146,11 +148,6 @@ public class Repository extends Database{
 
     public  ObservableList<Model> getModel(){
         ObservableList<Model> md = FXCollections.observableArrayList();
-        try {
-            loadModel();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
         return md = repModel;
     }
 

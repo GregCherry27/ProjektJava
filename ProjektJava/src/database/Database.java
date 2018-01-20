@@ -9,7 +9,7 @@ public class Database {
 
     public Connection connectDatabase() throws SQLException
     {
-            return DriverManager.getConnection("jdbc:mysql://localhost:3306/projjava", "root", "");
+            return DriverManager.getConnection("jdbc:mysql://localhost:3306/projjava?requireSSL=false", "root", "");
     }
 
     public void setString(String tableName, String valueString) throws SQLException

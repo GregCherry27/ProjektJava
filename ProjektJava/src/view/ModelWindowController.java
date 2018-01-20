@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.Model;
+import model.Pdftest;
 import model.Repository;
 import model.Surface;
 
@@ -33,11 +34,13 @@ public class ModelWindowController extends Repository{
     private TextField tfName;
 
     private view.MainWindow mainWindow;
+    private model.Repository repository;
 
     public void setMainWindow(view.MainWindow mWindow)
     {
         mainWindow = mWindow;
     }
+
 
     @FXML
     public void showModelTable()
@@ -55,6 +58,13 @@ public class ModelWindowController extends Repository{
         fillComboBSurface();
         fillComboBProduct();
         fillChoiceAccessory();
+        //Dopisz catch SQL, to wyswietla liste produktow, getter tu nie jest potrzebny poniewaz
+        //ladujemy tu tylko produkty
+        try{
+        tableModel.setItems(loadModel());}
+        catch(SQLException e){}
+
+
     }
 
     public void fillComboBSurface() {
@@ -125,4 +135,11 @@ public class ModelWindowController extends Repository{
         deleteRecord("model", selectedName);
         refreshModel();
     }
+    @FXML
+    public void generatePdf()
+    {   ObservableList<Model> model = getModel(); //gettem lapiemy ObservableList i przekazujemy do PDF
+        Pdftest.gen(model);
+    }
+
+
 }
