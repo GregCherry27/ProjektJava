@@ -3,6 +3,7 @@ package view;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import model.Product;
 import model.Repository;
 import model.Surface;
 
@@ -75,4 +76,28 @@ public class SurfaceWindowController extends Repository{
             alert.showAndWait();
         }
     }
+
+    @FXML
+    public void editSurface() throws SQLException
+    {
+        TablePosition<Product, String> positionProduct = tableSurface.getSelectionModel().getSelectedCells().get(0);
+        int row = positionProduct.getRow();
+        String selectedName = String.valueOf( nameColumn.getCellObservableValue(row).getValue());
+        String selectedcomm = String.valueOf( commentsColumn.getCellObservableValue(row).getValue());
+        String newName = nameTBox.getText().trim();
+        updateString(selectedName, "surface", newName);
+        String newcomm = commentTArea.getText().trim();
+        updatecomm(selectedcomm, "surface", newcomm);
+
+
+        refreshSurface();
+
+        nameTBox.clear();
+        commentTArea.clear();
+
+    }
+
+
+
+
 }

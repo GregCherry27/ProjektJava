@@ -75,10 +75,10 @@ public class AccessoryWindowController extends Repository{
     {
         TablePosition<Accessory, String> positionAccessory = tableAccessory.getSelectionModel().getSelectedCells().get(0);
         int row = positionAccessory.getRow();
-        String selectedName = String.valueOf(nameColumn.getCellObservableValue(row).getValue());
-        String newName = editNameTBox.getText().trim();
+        String selectedName = String.valueOf( nameColumn.getCellObservableValue(row).getValue());
+        String newName = nameTBox.getText().trim();
         updateString(selectedName, "accessory", newName);
         refreshAccessories();
-        editNameTBox.clear();
+        nameTBox.clear();
     }
 }

@@ -1,5 +1,6 @@
 package model;
 
+
 public class Accessory {
 
     private String name;

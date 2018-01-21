@@ -84,17 +84,28 @@ public class ProductWindowController extends Repository{
         }
     }
 
-    //TODO: dokończyć
-    /*@FXML
+
+    @FXML
     public void editNameProduct() throws SQLException
     {
-        TablePosition<Accessory, String> positionAccessory = tableAccessory.getSelectionModel().getSelectedCells().get(0);
-        int row = positionAccessory.getRow();
+        TablePosition<Product, String> positionProduct = tableProduct.getSelectionModel().getSelectedCells().get(0);
+        int row = positionProduct.getRow();
         String selectedName = String.valueOf( nameColumn.getCellObservableValue(row).getValue());
-        String newName = editNameTBox.getText().trim();
-        updateString(selectedName, "accessory", newName);
-        refreshAccessories();
-        editNameTBox.clear();
-    }*/
+        String selectedTemp = String.valueOf( tempColumn.getCellObservableValue(row).getValue());
+        String selectedDos = String.valueOf( dosageColumn.getCellObservableValue(row).getValue());
+        String newName = nameTBox.getText().trim();
+        updateString(selectedName, "product", newName);
+        String newTemp = temperatureTBox.getText().trim();
+        updateTemp(selectedTemp, "product", newTemp);
+        String newDos = dosageTBox.getText().trim();
+        updateDos(selectedDos, "product", newDos);
+
+        refreshProduct();
+
+        nameTBox.clear();
+        temperatureTBox.clear();
+        dosageTBox.clear();
+
+    }
 }
 

@@ -36,7 +36,7 @@
          <font>
             <Font size="15.0" />
          </font></Button>
-            <Button layoutX="376.0" layoutY="135.0" mnemonicParsing="false" stylesheets="@OtherWindowStyle.css" text="Edytuj">
+            <Button layoutX="376.0" layoutY="135.0" mnemonicParsing="false" onMouseClicked="#editNameProduct" stylesheets="@OtherWindowStyle.css" text="Edytuj">
          <font>
             <Font size="15.0" />
          </font></Button>

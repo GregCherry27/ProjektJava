@@ -23,15 +23,14 @@
       <font>
          <Font size="15.0" />
       </font></Button>
-   <Button layoutX="420.0" layoutY="460.0" mnemonicParsing="false" onMouseClicked="#editNameAccessory" stylesheets="@OtherWindowStyle.css" text="Edytuj">
+   <Button layoutX="311.0" layoutY="460.0" mnemonicParsing="false" onMouseClicked="#editNameAccessory" stylesheets="@OtherWindowStyle.css" text="Edytuj">
       <font>
          <Font size="15.0" />
       </font></Button>
-   <Button layoutX="491.0" layoutY="460.0" mnemonicParsing="false" onMouseClicked="#deleteAccessory" stylesheets="@OtherWindowStyle.css" text="Usuń">
+   <Button layoutX="419.0" layoutY="460.0" mnemonicParsing="false" onMouseClicked="#deleteAccessory" stylesheets="@OtherWindowStyle.css" text="Usuń">
       <font>
          <Font size="15.0" />
       </font></Button>
-   <TextField fx:id="editNameTBox" layoutX="258.0" layoutY="460.0" />
    <Button fx:id="btHome" layoutX="14.0" layoutY="515.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
    <Button fx:id="btExit" layoutX="766.0" layoutY="520.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
 </AnchorPane>

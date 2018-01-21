@@ -11,6 +11,7 @@ import model.Model;
 import model.Pdftest;
 import model.Repository;
 import model.Surface;
+import model.*;
 
 import java.sql.SQLException;
 
@@ -162,6 +163,8 @@ public class ModelWindowController extends Repository{
     @FXML
     public void generatePdf()
     {
+
+
         Pdftest.gen(OlModel);
         refreshModel();
     }
@@ -190,4 +193,33 @@ public class ModelWindowController extends Repository{
         mainStage.setScene(scene);
         mainStage.show();
     }*/
+
+    @FXML
+    public void editModel() throws SQLException
+    {
+        TablePosition<Product, String> positionProduct = tableModel.getSelectionModel().getSelectedCells().get(0);
+        int row = positionProduct.getRow();
+        String selectedName = String.valueOf( nameColumn.getCellObservableValue(row).getValue());
+        String selectProduct = String.valueOf( productColumn.getCellObservableValue(row).getValue());
+        String selectAccesories = String.valueOf( accessoryColumn.getCellObservableValue(row).getValue());
+        String selectSurface = String.valueOf( surfaceColumn.getCellObservableValue(row).getValue());
+        String newName = tfName.getText().trim();
+        updateString(selectedName, "model", newName);
+        String newSurf = cbSurface.getSelectionModel().getSelectedItem().trim();
+        updateModelSurf(selectSurface, "model", newSurf);
+        String newProd = cbProduct.getSelectionModel().getSelectedItem().trim();
+        updateModelProd(selectProduct, "model", newProd);
+        String newAcc = cobAccessory.getSelectionModel().getSelectedItem().trim();
+        updateModelAcc(selectAccesories, "model", newAcc);
+
+        refreshModel();
+
+        tfName.clear();
+
+        cbProduct.getSelectionModel().clearSelection();
+        cbSurface.getSelectionModel().clearSelection();
+        cobAccessory.getSelectionModel().clearSelection();
+
+    }
+
 }

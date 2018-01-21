@@ -52,7 +52,7 @@
          <font>
             <Font size="15.0" />
          </font></Button>
-      <Button layoutX="185.0" layoutY="475.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" stylesheets="@OtherWindowStyle.css" text="Edytuj">
+      <Button layoutX="185.0" layoutY="475.0" mnemonicParsing="false" onMouseClicked="#editModel" prefHeight="35.0" prefWidth="80.0" stylesheets="@OtherWindowStyle.css" text="Edytuj">
          <font>
             <Font size="15.0" />
          </font></Button>

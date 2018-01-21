@@ -57,8 +57,43 @@ public class Database {
     public void updateString(String nameRecord, String nameTable, String newValue) throws SQLException
     {
         Connection conn = connectDatabase();
-        conn.createStatement().executeUpdate("UPDATE " + nameTable + " SET name = " + newValue + " WHERE name = " + nameRecord);
+        conn.createStatement().executeUpdate("UPDATE " + nameTable + " SET NAME = '" + newValue + "' WHERE name = '" + nameRecord +"'" );  //updatowanie akcesorium poprawion działa
     }
+    public void updateTemp(String nameRecord, String nameTable, String newValue) throws SQLException
+    {
+        Connection conn = connectDatabase();
+        conn.createStatement().executeUpdate("UPDATE " + nameTable + " SET temperature = '" + newValue + "' WHERE temperature = '" + nameRecord +"'" );
+    }
+    public void updateDos(String nameRecord, String nameTable, String newValue) throws SQLException
+    {
+        Connection conn = connectDatabase();
+        conn.createStatement().executeUpdate("UPDATE " + nameTable + " SET dosage = '" + newValue + "' WHERE dosage = '" + nameRecord +"'" );
+    }
+    public void updatecomm(String nameRecord, String nameTable, String newValue) throws SQLException
+    {
+        Connection conn = connectDatabase();
+        conn.createStatement().executeUpdate("UPDATE " + nameTable + " SET comments = '" + newValue + "' WHERE comments = '" + nameRecord +"'" );
+    }
+    public void updateModelSurf(String nameRecord, String nameTable, String newValue) throws SQLException
+    {
+        Connection conn = connectDatabase();
+        conn.createStatement().executeUpdate("UPDATE " + nameTable + " SET surface = '" + newValue + "' WHERE surface = '" + nameRecord +"'" );
+    }
+    public void updateModelProd(String nameRecord, String nameTable, String newValue) throws SQLException
+    {
+        Connection conn = connectDatabase();
+        conn.createStatement().executeUpdate("UPDATE " + nameTable + " SET product = '" + newValue + "' WHERE product = '" + nameRecord +"'" );
+    }
+    public void updateModelAcc(String nameRecord, String nameTable, String newValue) throws SQLException
+    {
+        Connection conn = connectDatabase();
+        conn.createStatement().executeUpdate("UPDATE " + nameTable + " SET accessories = '" + newValue + "' WHERE accessories = '" + nameRecord +"'" );
+    }
+
+
+
+
+
 
     public void addProduct(String n, Double t, Double d) throws SQLException
     {

@@ -108,6 +108,11 @@ public class Repository extends Database{
                     newModel.setAccessories(accessoriesModel);
                     String surfaceModel = res.getString("product");
                     newModel.setProduct(surfaceModel);
+                    //String tempModel = res.getString("temperature");
+                    //newModel.setProduct(tempModel);
+                    //String dosageModel = res.getString("dosage");
+                    //newModel.setProduct(dosageModel);
+
                     repModel.add(newModel);
                 }
             }
@@ -153,6 +158,8 @@ public class Repository extends Database{
         }
         return md = repModel;
     }
+
+
 
     public void refreshAccessories()
     {
