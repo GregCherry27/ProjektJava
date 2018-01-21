@@ -1,10 +1,7 @@
 package view;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TablePosition;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.Accessory;
 import model.Repository;
@@ -41,6 +38,14 @@ public class AccessoryWindowController extends Repository{
     public void addAccessory() throws SQLException
     {
         String name = nameTBox.getText().trim();
+        if (name.isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("UWAGA!");
+            alert.setHeaderText(null);
+            alert.setContentText("Nazwa akcesorium jest wymagana!");
+            alert.showAndWait();
+            return;
+        }
         setString("accessory", name);
         refreshAccessories();
         nameTBox.clear();
@@ -49,11 +54,20 @@ public class AccessoryWindowController extends Repository{
     @FXML
     public void deleteAccessory() throws SQLException
     {
-        TablePosition<Accessory, String> positionAccessory = tableAccessory.getSelectionModel().getSelectedCells().get(0);
-        int row = positionAccessory.getRow();
-        String selectedName = String.valueOf( nameColumn.getCellObservableValue(row).getValue());
-        deleteRecord("accessory", selectedName);
-        refreshAccessories();
+        try {
+            TablePosition<Accessory, String> positionAccessory = tableAccessory.getSelectionModel().getSelectedCells().get(0);
+            int row = positionAccessory.getRow();
+            String selectedName = String.valueOf(nameColumn.getCellObservableValue(row).getValue());
+            deleteRecord("accessory", selectedName);
+            refreshAccessories();
+        }catch (Exception ex)
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("UWAGA!");
+            alert.setHeaderText(null);
+            alert.setContentText("Wybierz element do usunięcia!");
+            alert.showAndWait();
+        }
     }
 
     @FXML

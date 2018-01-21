@@ -42,6 +42,14 @@ public class SurfaceWindowController extends Repository{
     public void addSurface() throws SQLException
     {
         String name = nameTBox.getText().trim();
+        if (name.isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("UWAGA!");
+            alert.setHeaderText(null);
+            alert.setContentText("Nazwa powierzchni jest wymagana!");
+            alert.showAndWait();
+            return;
+        }
         String comment = commentTArea.getText().trim();
         addSurface(name, comment);
         refreshSurface();
@@ -52,10 +60,19 @@ public class SurfaceWindowController extends Repository{
     @FXML
     public void deleteSurface() throws SQLException
     {
-        TablePosition<Surface, String> positionAccessory = tableSurface.getSelectionModel().getSelectedCells().get(0);
-        int row = positionAccessory.getRow();
-        String selectedName = String.valueOf(nameColumn.getCellObservableValue(row).getValue());
-        deleteRecord("surface", selectedName);
-        refreshSurface();
+        try {
+            TablePosition<Surface, String> positionAccessory = tableSurface.getSelectionModel().getSelectedCells().get(0);
+            int row = positionAccessory.getRow();
+            String selectedName = String.valueOf(nameColumn.getCellObservableValue(row).getValue());
+            deleteRecord("surface", selectedName);
+            refreshSurface();
+        }catch (Exception ex)
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("UWAGA!");
+            alert.setHeaderText(null);
+            alert.setContentText("Wybierz element do usunięcia!");
+            alert.showAndWait();
+        }
     }
 }

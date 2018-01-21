@@ -110,13 +110,22 @@ public class ModelWindowController extends Repository{
     @FXML
     public void addModel() throws SQLException
     {
-        String nameModel = tfName.getText().trim();
-        String surfaceModel = cbSurface.getSelectionModel().getSelectedItem().trim();
-        String productModel = cbProduct.getSelectionModel().getSelectedItem().trim();
-        String accessoryModel = cobAccessory.getSelectionModel().getSelectedItem().trim();
+            String nameModel = tfName.getText().trim();
+            if (nameModel.isEmpty()) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("UWAGA!");
+                alert.setHeaderText(null);
+                alert.setContentText("Nazwa modułu jest wymagana!");
+                alert.showAndWait();
+                return;
+            }
+            String surfaceModel = cbSurface.getSelectionModel().getSelectedItem().trim();
+            String productModel = cbProduct.getSelectionModel().getSelectedItem().trim();
+            String accessoryModel = cobAccessory.getSelectionModel().getSelectedItem().trim();
 
-        addModel(nameModel, surfaceModel, productModel, accessoryModel);
-        refreshModel();
+            addModel(nameModel, surfaceModel, productModel, accessoryModel);
+            refreshModel();
+
 
         tfName.clear();
         cbSurface.getSelectionModel().clearSelection();
@@ -125,14 +134,22 @@ public class ModelWindowController extends Repository{
     }
 
     @FXML
-    public void deleteModel() throws SQLException
-    {
-        TablePosition<Surface, String> positionAccessory = tableModel.getSelectionModel().getSelectedCells().get(0);
-        int row = positionAccessory.getRow();
-        String selectedName = String.valueOf(nameColumn.getCellObservableValue(row).getValue());
-        deleteRecord("model", selectedName);
-        refreshModel();
+    public void deleteModel() throws SQLException {
+        try {
+            TablePosition<Surface, String> positionAccessory = tableModel.getSelectionModel().getSelectedCells().get(0);
+            int row = positionAccessory.getRow();
+            String selectedName = String.valueOf(nameColumn.getCellObservableValue(row).getValue());
+            deleteRecord("model", selectedName);
+            refreshModel();
+        }catch(Exception ex) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("UWAGA!");
+            alert.setHeaderText(null);
+            alert.setContentText("Wybierz element do usunięcia!");
+            alert.showAndWait();
+        }
     }
+
     @FXML
     public void generatePdf()
     {
