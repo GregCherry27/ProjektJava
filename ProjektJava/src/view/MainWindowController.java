@@ -65,6 +65,8 @@ public class MainWindowController extends Repository{
         ModelWindowController mwc = loader.getController();
         mwc.setMainWindow(mainWindow);
         mwc.showModelTable();
+        mwc.setMainStage(mainStage);
+        mwc.setMainBorderPane(mainBorderPane);
         mainBorderPane.setCenter(mainItems);
     }
 

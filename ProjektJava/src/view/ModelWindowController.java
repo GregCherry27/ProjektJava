@@ -5,6 +5,8 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 import model.Model;
 import model.Pdftest;
 import model.Repository;
@@ -40,6 +42,13 @@ public class ModelWindowController extends Repository{
     private view.MainWindow mainWindow;
 
     private ObservableList<Model> OlModel = getModel();
+
+    private Stage mainStage;
+
+    public void setMainStage(Stage pr)
+    {
+        mainStage = pr;
+    }
 
 
     public void setMainWindow(view.MainWindow mWindow)
@@ -156,4 +165,29 @@ public class ModelWindowController extends Repository{
         Pdftest.gen(OlModel);
         refreshModel();
     }
+
+    @FXML
+    public void Exit()
+    {
+        mainStage.close();
+    }
+
+
+    private BorderPane mainBorderPane;
+
+    public void setMainBorderPane(BorderPane bp)
+    {
+        mainBorderPane = bp;
+    }
+
+    /*@FXML
+    public void Home() throws IOException
+    {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(MainWindow.class.getResource("/view/MainWindow.fxml"));
+        mainBorderPane = loader.load();
+        Scene scene = new Scene(mainBorderPane);
+        mainStage.setScene(scene);
+        mainStage.show();
+    }*/
 }

@@ -10,41 +10,41 @@
 
 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="560.0" prefWidth="800.0" styleClass="anchorPane" stylesheets="@OtherWindowStyle.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ProductWindowController">
         <children>
-            <TableView fx:id="tableProduct" editable="true" layoutX="138.0" layoutY="230.0" prefHeight="280.0" prefWidth="525.0">
+            <TableView fx:id="tableProduct" editable="true" layoutX="100.0" layoutY="210.0" prefHeight="280.0" prefWidth="600.0">
                 <columns>
-                    <TableColumn fx:id="nameColumn" prefWidth="175.0" text="Nazwa" />
-                    <TableColumn fx:id="tempColumn" minWidth="0.0" prefWidth="175.0" text="Temperatura" />
-                    <TableColumn fx:id="dosageColumn" minWidth="0.0" prefWidth="175.0" text="Dozowanie" />
+                    <TableColumn fx:id="nameColumn" prefWidth="200.0" text="Nazwa" />
+                    <TableColumn fx:id="tempColumn" minWidth="0.0" prefWidth="200.0" text="Temperatura" />
+                    <TableColumn fx:id="dosageColumn" minWidth="0.0" prefWidth="200.0" text="Dozowanie" />
                 </columns>
             </TableView>
-            <Label layoutX="189.0" layoutY="105.0" stylesheets="@OtherWindowStyle.css" text="Nazwa:">
+            <Label layoutX="189.0" layoutY="55.0" stylesheets="@OtherWindowStyle.css" text="Nazwa:">
          <font>
             <Font size="16.0" />
          </font></Label>
-            <TextField fx:id="nameTBox" layoutX="138.0" layoutY="140.0" prefWidth="170.0" />
-            <Label layoutX="338.0" layoutY="105.0" stylesheets="@OtherWindowStyle.css" text="Temperatura:">
+            <TextField fx:id="nameTBox" layoutX="138.0" layoutY="90.0" prefWidth="170.0" />
+            <Label layoutX="338.0" layoutY="55.0" stylesheets="@OtherWindowStyle.css" text="Temperatura:">
          <font>
             <Font size="16.0" />
          </font></Label>
-            <Label layoutX="523.0" layoutY="105.0" stylesheets="@OtherWindowStyle.css" text="Dozowanie:">
+            <Label layoutX="523.0" layoutY="55.0" stylesheets="@OtherWindowStyle.css" text="Dozowanie:">
          <font>
             <Font size="16.0" />
          </font></Label>
-            <TextField fx:id="temperatureTBox" layoutX="316.0" layoutY="140.0" prefWidth="170.0" />
-            <TextField fx:id="dosageTBox" layoutX="493.0" layoutY="140.0" prefWidth="170.0" />
-            <Button layoutX="199.0" layoutY="174.0" mnemonicParsing="false" onMouseClicked="#addProduct" stylesheets="@OtherWindowStyle.css" text="Dodaj">
+            <TextField fx:id="temperatureTBox" layoutX="316.0" layoutY="90.0" prefWidth="170.0" />
+            <TextField fx:id="dosageTBox" layoutX="493.0" layoutY="90.0" prefWidth="170.0" />
+            <Button layoutX="199.0" layoutY="135.0" mnemonicParsing="false" onMouseClicked="#addProduct" stylesheets="@OtherWindowStyle.css" text="Dodaj">
          <font>
             <Font size="15.0" />
          </font></Button>
-            <Button layoutX="376.0" layoutY="174.0" mnemonicParsing="false" stylesheets="@OtherWindowStyle.css" text="Edytuj">
+            <Button layoutX="376.0" layoutY="135.0" mnemonicParsing="false" stylesheets="@OtherWindowStyle.css" text="Edytuj">
          <font>
             <Font size="15.0" />
          </font></Button>
-            <Button layoutX="557.0" layoutY="174.0" mnemonicParsing="false" onMouseClicked="#deleteProduct" stylesheets="@OtherWindowStyle.css" text="Usuń">
+            <Button layoutX="557.0" layoutY="135.0" mnemonicParsing="false" onMouseClicked="#deleteProduct" stylesheets="@OtherWindowStyle.css" text="Usuń">
          <font>
             <Font size="15.0" />
          </font></Button>
-      <Button fx:id="btHome" layoutX="14.0" layoutY="515.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
-      <Button fx:id="btExit" layoutX="766.0" layoutY="520.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
+      <Button fx:id="btHome" layoutX="15.0" layoutY="510.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
+      <Button fx:id="btExit" layoutX="750.0" layoutY="510.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
         </children>
 </AnchorPane>

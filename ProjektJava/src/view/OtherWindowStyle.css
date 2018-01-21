@@ -25,3 +25,23 @@
     -fx-font-weight: bold;
     -fx-background-image: url("/files/labelBG.png");
 }
+
+.buttonHome
+{
+    -fx-background-image: url("/files/button_home_nc.png");
+}
+
+.buttonHome:pressed
+{
+    -fx-background-image: url("/files/button_home_c.png");
+}
+
+.buttonExit
+{
+    -fx-background-image: url("/files/button_exit_nc.png");
+}
+
+.buttonExit:pressed
+{
+    -fx-background-image: url("/files/button_exit_c.png");
+}

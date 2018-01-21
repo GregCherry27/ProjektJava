@@ -10,35 +10,35 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="560.0" prefWidth="800.0" styleClass="anchorPane" stylesheets="@OtherWindowStyle.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.SurfaceWindowController">
-    <TableView fx:id="tableSurface" editable="true" layoutX="100.0" layoutY="230.0" prefHeight="209.0" prefWidth="600.0">
+    <TableView fx:id="tableSurface" editable="true" layoutX="100.0" layoutY="210.0" prefHeight="209.0" prefWidth="600.0">
         <columns>
             <TableColumn fx:id="nameColumn" prefWidth="139.0" text="Nazwa" />
             <TableColumn fx:id="commentsColumn" minWidth="0.0" prefWidth="604.0" text="Komentarz" />
         </columns>
     </TableView>
-   <Label layoutX="142.0" layoutY="105.0" text="Nazwa:">
+   <Label layoutX="142.0" layoutY="55.0" text="Nazwa:">
       <font>
          <Font size="16.0" />
       </font></Label>
-   <Label layoutX="506.0" layoutY="99.0" text="Komentarz:" fx:id="x">
+   <Label layoutX="287.0" layoutY="55.0" text="Komentarz:" fx:id="x">
       <font>
          <Font size="16.0" />
       </font></Label>
-   <TextField fx:id="nameTBox" layoutX="100.0" layoutY="140.0" />
-   <TextArea fx:id="commentTArea" layoutX="471.0" layoutY="130.0" prefHeight="90.0" prefWidth="200.0" wrapText="true" />
-   <Button fx:id="addSurface" layoutX="153.0" layoutY="185.0" mnemonicParsing="false" onMouseClicked="#addSurface" stylesheets="@OtherWindowStyle.css" text="Dodaj">
+   <TextField fx:id="nameTBox" layoutX="100.0" layoutY="90.0" prefWidth="170.0" />
+   <TextArea fx:id="commentTArea" layoutX="287.0" layoutY="90.0" prefHeight="90.0" prefWidth="411.0" wrapText="true" />
+   <Button fx:id="addSurface" layoutX="197.0" layoutY="135.0" mnemonicParsing="false" onMouseClicked="#addSurface" stylesheets="@OtherWindowStyle.css" text="Dodaj">
       <font>
          <Font size="15.0" />
       </font></Button>
-   <Button layoutX="232.0" layoutY="185.0" mnemonicParsing="false" stylesheets="@OtherWindowStyle.css" text="Edytuj">
+   <Button layoutX="196.0" layoutY="444.0" mnemonicParsing="false" stylesheets="@OtherWindowStyle.css" text="Edytuj">
       <font>
          <Font size="15.0" />
       </font></Button>
-   <Button layoutX="311.0" layoutY="185.0" mnemonicParsing="false" onMouseClicked="#deleteSurface" stylesheets="@OtherWindowStyle.css" text="Usuń">
+   <Button layoutX="287.0" layoutY="444.0" mnemonicParsing="false" onMouseClicked="#deleteSurface" stylesheets="@OtherWindowStyle.css" text="Usuń">
       <font>
          <Font size="15.0" />
       </font></Button>
-   <Button fx:id="btHome" layoutX="14.0" layoutY="515.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
-   <Button fx:id="btExit" layoutX="766.0" layoutY="520.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
+   <Button fx:id="btHome" layoutX="15.0" layoutY="510.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
+   <Button fx:id="btExit" layoutX="750.0" layoutY="510.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
 
 </AnchorPane>
