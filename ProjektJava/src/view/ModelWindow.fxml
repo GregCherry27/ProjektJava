@@ -4,32 +4,61 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="560.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ModelWindowController">
+<AnchorPane prefHeight="560.0" prefWidth="800.0" styleClass="anchorPane" stylesheets="@OtherWindowStyle.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ModelWindowController">
    <children>
-      <TableView fx:id="tableModel" layoutX="132.0" layoutY="250.0" prefHeight="200.0" prefWidth="537.0">
+      <TableView fx:id="tableModel" layoutX="50.0" layoutY="210.0" prefHeight="250.0" prefWidth="702.0">
         <columns>
-          <TableColumn fx:id="nameColumn" prefWidth="116.0" text="Nazwa" />
-          <TableColumn fx:id="surfaceColumn" prefWidth="138.0" text="Powierzchnia" />
-            <TableColumn fx:id="productColumn" prefWidth="144.0" text="Produkt" />
-            <TableColumn fx:id="accessoryColumn" prefWidth="138.0" text="Akcesoria" />
+          <TableColumn fx:id="nameColumn" prefWidth="175.0" text="Nazwa" />
+          <TableColumn fx:id="surfaceColumn" prefWidth="175.0" text="Powierzchnia" />
+            <TableColumn fx:id="productColumn" prefWidth="175.0" text="Produkt" />
+            <TableColumn fx:id="accessoryColumn" prefWidth="175.0" text="Akcesoria" />
         </columns>
       </TableView>
-      <Button fx:id="btPDF" layoutX="351.0" layoutY="486.0" mnemonicParsing="false" onAction="#generatePdf" text="PDF" />
-      <Label layoutX="101.0" layoutY="89.0" text="Nazwa" />
-      <Label layoutX="251.0" layoutY="89.0" text="Powierzchnia" />
-      <Label layoutX="407.0" layoutY="89.0" text="Produkt" />
-      <Label layoutX="609.0" layoutY="97.0" text="Akcesoria" />
-      <TextField fx:id="tfName" layoutX="58.0" layoutY="137.0" />
-      <ComboBox fx:id="cbSurface" layoutX="238.0" layoutY="137.0" prefWidth="150.0" />
-      <ComboBox fx:id="cbProduct" layoutX="408.0" layoutY="137.0" prefWidth="150.0" />
-      <ChoiceBox fx:id="cobAccessory" layoutX="585.0" layoutY="137.0" prefWidth="150.0" />
-      <Button fx:id="btnAddModel" layoutX="111.0" layoutY="187.0" mnemonicParsing="false" onMouseClicked="#addModel" text="Dodaj" />
-      <Button layoutX="212.0" layoutY="187.0" mnemonicParsing="false" onMouseClicked="#deleteModel" text="Usuń" />
-      <Button layoutX="286.0" layoutY="187.0" mnemonicParsing="false" text="Edytuj" />
+      <Button fx:id="btPDF" layoutX="485.0" layoutY="475.0" mnemonicParsing="false" onAction="#generatePdf" prefHeight="35.0" prefWidth="80.0" stylesheets="@OtherWindowStyle.css" text="PDF">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <Label layoutX="111.0" layoutY="55.0" stylesheets="@MainWindowStyle.css" text="Nazwa">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="264.0" layoutY="55.0" stylesheets="@MainWindowStyle.css" text="Powierzchnia">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="457.0" layoutY="55.0" stylesheets="@MainWindowStyle.css" text="Produkt">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="626.0" layoutY="55.0" stylesheets="@MainWindowStyle.css" text="Akcesoria">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <TextField fx:id="tfName" layoutX="50.0" layoutY="90.0" prefHeight="25.0" prefWidth="170.0" styleClass="label" />
+      <ComboBox fx:id="cbSurface" layoutX="225.0" layoutY="90.0" prefWidth="170.0" styleClass="label" />
+      <ComboBox fx:id="cbProduct" layoutX="400.0" layoutY="90.0" prefWidth="170.0" styleClass="label" />
+      <ChoiceBox fx:id="cobAccessory" layoutX="575.0" layoutY="90.0" prefHeight="30.0" prefWidth="170.0" styleClass="label" />
+      <Button fx:id="btnAddModel" layoutX="284.0" layoutY="135.0" mnemonicParsing="false" onMouseClicked="#addModel" prefHeight="35.0" prefWidth="80.0" stylesheets="@OtherWindowStyle.css" text="Dodaj">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <Button layoutX="458.0" layoutY="135.0" mnemonicParsing="false" onMouseClicked="#deleteModel" prefHeight="35.0" prefWidth="80.0" stylesheets="@OtherWindowStyle.css" text="Usuń">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <Button layoutX="290.0" layoutY="475.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" stylesheets="@OtherWindowStyle.css" text="Edytuj">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <Separator layoutX="50.0" layoutY="190.0" prefWidth="700.0" />
+      <Button fx:id="btHome" layoutX="14.0" layoutY="510.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
+      <Button fx:id="btExit" layoutX="756.0" layoutY="510.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
    </children>
 </AnchorPane>

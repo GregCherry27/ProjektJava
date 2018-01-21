@@ -1,28 +1,19 @@
-.button{
-    -fx-text-fill: #828282;
-    -fx-font-size: 15px;
-    -fx-font-weight: bold;
-    -fx-background-color: #111111;
-}
-
-.button:pressed {
-    -fx-text-fill: #96b946;
-    -fx-font-size: 15px;
-    -fx-font-weight: bold;
-    -fx-background-color: #3c3c3c;
-}
-
-.label{
-    -fx-text-fill: #96b946;
-    -fx-font-size: 20px;
-    -fx-font-weight: bold;
-    -fx-background-color: #3c3c3c;
-}
-
-.tab-label .table-view
+.HBox
 {
-    -fx-text-fill: #000000;
-    -fx-background-color: #111111;
+    -fx-background-image: url("/files/main_backgorund.png");
 }
 
+.menu-button
+{
+    -fx-text-fill: #f7ffec;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+    -fx-background-image: url("/files/main_label_nc.png");
+}
 
+.menu-button:focused
+{
+    -fx-text-fill: #071e07;
+    -fx-font-weight: bold;
+    -fx-background-image: url("/files/main_label_c.png");
+}

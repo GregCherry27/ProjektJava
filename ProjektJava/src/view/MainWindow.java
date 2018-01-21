@@ -23,11 +23,6 @@ public class MainWindow extends Application {
         this.primaryStage.setTitle("Database Application");
 
         showMainView();
-
-        /*FileInputStream input = new FileInputStream("resources/hqdefault.png");
-        Image image = new Image(input);
-        ImageView imageView = new ImageView(image);
-        HBox hbox = new HBox(imageView);*/
     }
 
 

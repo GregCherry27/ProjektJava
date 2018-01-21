@@ -7,20 +7,38 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="560.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.SurfaceWindowController">
-    <TableView fx:id="tableSurface" editable="true" layoutX="230.0" layoutY="280.0" prefHeight="119.0" prefWidth="330.0">
+<AnchorPane prefHeight="560.0" prefWidth="800.0" styleClass="anchorPane" stylesheets="@OtherWindowStyle.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.SurfaceWindowController">
+    <TableView fx:id="tableSurface" editable="true" layoutX="100.0" layoutY="230.0" prefHeight="209.0" prefWidth="600.0">
         <columns>
-            <TableColumn fx:id="nameColumn" prefWidth="200.0" text="Nazwa" />
-            <TableColumn fx:id="commentsColumn" minWidth="0.0" prefWidth="401.0" text="Komentarz" />
+            <TableColumn fx:id="nameColumn" prefWidth="139.0" text="Nazwa" />
+            <TableColumn fx:id="commentsColumn" minWidth="0.0" prefWidth="604.0" text="Komentarz" />
         </columns>
     </TableView>
-   <Label layoutX="45.0" layoutY="124.0" text="Name:" />
-   <Label layoutX="485.0" layoutY="91.0" text="Komentarz:" fx:id="x" />
-   <TextField fx:id="nameTBox" layoutX="38.0" layoutY="157.0" />
-   <TextArea fx:id="commentTArea" layoutX="485.0" layoutY="124.0" prefHeight="90.0" prefWidth="200.0" />
-   <Button fx:id="addSurface" layoutX="38.0" layoutY="189.0" mnemonicParsing="false" onMouseClicked="#addSurface" text="Dodaj" />
-   <Button layoutX="104.0" layoutY="189.0" mnemonicParsing="false" text="Edytuj" />
-   <Button layoutX="187.0" layoutY="189.0" mnemonicParsing="false" onMouseClicked="#deleteSurface" text="Usuń" />
+   <Label layoutX="142.0" layoutY="105.0" text="Nazwa:">
+      <font>
+         <Font size="16.0" />
+      </font></Label>
+   <Label layoutX="506.0" layoutY="99.0" text="Komentarz:" fx:id="x">
+      <font>
+         <Font size="16.0" />
+      </font></Label>
+   <TextField fx:id="nameTBox" layoutX="100.0" layoutY="140.0" />
+   <TextArea fx:id="commentTArea" layoutX="471.0" layoutY="130.0" prefHeight="90.0" prefWidth="200.0" wrapText="true" />
+   <Button fx:id="addSurface" layoutX="153.0" layoutY="185.0" mnemonicParsing="false" onMouseClicked="#addSurface" stylesheets="@OtherWindowStyle.css" text="Dodaj">
+      <font>
+         <Font size="15.0" />
+      </font></Button>
+   <Button layoutX="232.0" layoutY="185.0" mnemonicParsing="false" stylesheets="@OtherWindowStyle.css" text="Edytuj">
+      <font>
+         <Font size="15.0" />
+      </font></Button>
+   <Button layoutX="311.0" layoutY="185.0" mnemonicParsing="false" onMouseClicked="#deleteSurface" stylesheets="@OtherWindowStyle.css" text="Usuń">
+      <font>
+         <Font size="15.0" />
+      </font></Button>
+   <Button fx:id="btHome" layoutX="14.0" layoutY="515.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
+   <Button fx:id="btExit" layoutX="766.0" layoutY="520.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
 
 </AnchorPane>

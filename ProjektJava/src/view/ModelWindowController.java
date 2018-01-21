@@ -32,10 +32,15 @@ public class ModelWindowController extends Repository{
     private ChoiceBox<String> cobAccessory;
     @FXML
     private TextField tfName;
+    @FXML
+    private Button btHome;
+    @FXML
+    private Button btExit;
 
     private view.MainWindow mainWindow;
 
     private ObservableList<Model> OlModel = getModel();
+
 
     public void setMainWindow(view.MainWindow mWindow)
     {
@@ -134,5 +139,4 @@ public class ModelWindowController extends Repository{
         Pdftest.gen(OlModel);
         refreshModel();
     }
-
 }

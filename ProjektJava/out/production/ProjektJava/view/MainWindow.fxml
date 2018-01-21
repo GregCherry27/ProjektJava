@@ -1,18 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@MainWindowStyle.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MainWindowController">
+<BorderPane accessibleRole="MENU" maxHeight="1080.0" maxWidth="1920.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="HBox" stylesheets="@MainWindowStyle.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MainWindowController">
    <top>
-      <HBox prefHeight="40.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <HBox fx:id="hBox" prefHeight="40.0" prefWidth="600.0" stylesheets="@MainWindowStyle.css" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" onAction="#showModelView" prefHeight="40.0" prefWidth="200.0" text="Model" />
-            <Button mnemonicParsing="false" onAction="#showSurfaceView" prefHeight="40.0" prefWidth="200.0" text="Powierzchnia" />
-            <Button mnemonicParsing="false" onAction="#showProductView" prefHeight="40.0" prefWidth="200.0" text="Produkty" />
-            <Button mnemonicParsing="false" onAction="#showAccessoryView" prefHeight="40.0" prefWidth="200.0" text="Akcesoria" />
+            <Button mnemonicParsing="false" onAction="#showModelView" prefHeight="40.0" prefWidth="200.0" styleClass="menu-button" text="Model" textAlignment="CENTER">
+               <font>
+                  <Font size="20.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onAction="#showSurfaceView" prefHeight="40.0" prefWidth="200.0" styleClass="menu-button" text="Powierzchnia" textAlignment="CENTER">
+               <font>
+                  <Font size="20.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onAction="#showProductView" prefHeight="40.0" prefWidth="200.0" styleClass="menu-button" text="Produkty" textAlignment="CENTER">
+               <font>
+                  <Font size="20.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onAction="#showAccessoryView" prefHeight="40.0" prefWidth="200.0" styleClass="menu-button" text="Akcesoria" textAlignment="CENTER">
+               <font>
+                  <Font size="20.0" />
+               </font></Button>
          </children>
+         <styleClass>
+            <String fx:value="hBox" />
+            <String fx:value="menu-button" />
+         </styleClass>
       </HBox>
    </top>
 </BorderPane>

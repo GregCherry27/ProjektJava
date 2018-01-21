@@ -1,0 +1,27 @@
+.button
+{
+    -fx-background-image: url("/files/button_nc.png");
+    -fx-text-fill: #f7ffec;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+}
+
+.button:pressed
+{
+    -fx-background-image: url("/files/button_c.png");
+    -fx-text-fill: #071e07;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+}
+
+.anchorPane
+{
+    -fx-background-image: url("/files/background.png");
+}
+
+.label{
+    -fx-text-fill: #071e07;
+    /*-fx-font-size: 20px;*/
+    -fx-font-weight: bold;
+    -fx-background-image: url("/files/labelBG.png");
+}

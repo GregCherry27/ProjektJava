@@ -32,8 +32,6 @@ public class MainWindowController extends Repository{
         mainBorderPane = bp;
     }
 
-
-
     @FXML
     public void showProductView() throws IOException
     {
