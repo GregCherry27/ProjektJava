@@ -4,6 +4,7 @@
     -fx-text-fill: #f7ffec;
     -fx-font-weight: bold;
     -fx-font-size: 15px;
+    -fx-shadow-highlight-color: transparent;
 }
 
 .button:pressed
@@ -12,36 +13,42 @@
     -fx-text-fill: #071e07;
     -fx-font-weight: bold;
     -fx-font-size: 15px;
+    -fx-shadow-highlight-color: transparent;
 }
 
 .anchorPane
 {
     -fx-background-image: url("/files/background.png");
+    -fx-shadow-highlight-color: transparent;
 }
 
 .label{
     -fx-text-fill: #071e07;
-    /*-fx-font-size: 20px;*/
     -fx-font-weight: bold;
     -fx-background-image: url("/files/labelBG.png");
+    -fx-shadow-highlight-color: transparent;
 }
 
 .buttonHome
 {
-    -fx-background-image: url("/files/button_home_nc.png");
+    -fx-background-image: url("/files/button_home_nc.jpg");
+    -fx-shadow-highlight-color: transparent;
 }
 
 .buttonHome:pressed
 {
-    -fx-background-image: url("/files/button_home_c.png");
+    -fx-background-image: url("/files/button_home_c.jpg");
+    -fx-shadow-highlight-color: transparent;
 }
 
 .buttonExit
 {
     -fx-background-image: url("/files/button_exit_nc.png");
+    -fx-shadow-highlight-color: transparent;
 }
 
 .buttonExit:pressed
 {
     -fx-background-image: url("/files/button_exit_c.png");
+    -fx-shadow-highlight-color: transparent;
 }

@@ -3,9 +3,11 @@ package view;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import model.Accessory;
 import model.Repository;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 public class AccessoryWindowController extends Repository{
@@ -18,6 +20,13 @@ public class AccessoryWindowController extends Repository{
     TextField nameTBox;
     @FXML
     TextField editNameTBox;
+
+    private Stage mainStage;
+
+    public void setMainStage(Stage pr)
+    {
+        mainStage = pr;
+    }
 
     private MainWindow mainWindow;
 
@@ -71,6 +80,16 @@ public class AccessoryWindowController extends Repository{
     }
 
     @FXML
+    public void Home()
+    {
+        try {
+            mainWindow.showMainView();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
     public void editNameAccessory() throws SQLException
     {
         TablePosition<Accessory, String> positionAccessory = tableAccessory.getSelectionModel().getSelectedCells().get(0);
@@ -80,5 +99,11 @@ public class AccessoryWindowController extends Repository{
         updateString(selectedName, "accessory", newName);
         refreshAccessories();
         nameTBox.clear();
+    }
+
+    @FXML
+    public void Exit()
+    {
+        mainStage.close();
     }
 }

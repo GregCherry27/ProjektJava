@@ -5,6 +5,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -31,6 +32,12 @@
       <font>
          <Font size="15.0" />
       </font></Button>
-   <Button fx:id="btHome" layoutX="14.0" layoutY="515.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
-   <Button fx:id="btExit" layoutX="766.0" layoutY="520.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
+   <Button fx:id="btHome" layoutX="15.0" layoutY="510.0" mnemonicParsing="false" onAction="#Home" prefHeight="30.0" prefWidth="30.0" styleClass="buttonHome">
+      <effect>
+         <Glow level="1.0" />
+      </effect></Button>
+   <Button fx:id="btExit" layoutX="750.0" layoutY="510.0" mnemonicParsing="false" onAction="#Exit" prefHeight="30.0" prefWidth="30.0" styleClass="buttonExit">
+      <effect>
+         <Glow level="1.0" />
+      </effect></Button>
 </AnchorPane>

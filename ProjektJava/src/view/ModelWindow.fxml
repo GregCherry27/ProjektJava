@@ -7,6 +7,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -20,23 +21,23 @@
             <TableColumn fx:id="accessoryColumn" prefWidth="175.0" text="Akcesoria" />
         </columns>
       </TableView>
-      <Button fx:id="btPDF" layoutX="535.0" layoutY="475.0" mnemonicParsing="false" onAction="#generatePdf" prefHeight="35.0" prefWidth="80.0" stylesheets="@OtherWindowStyle.css" text="PDF">
+      <Button fx:id="btPDF" layoutX="535.0" layoutY="475.0" mnemonicParsing="false" onAction="#generatePdf" stylesheets="@OtherWindowStyle.css" text="PDF">
          <font>
             <Font size="15.0" />
          </font></Button>
-      <Label layoutX="111.0" layoutY="55.0" stylesheets="@MainWindowStyle.css" text="Nazwa">
+      <Label layoutX="111.0" layoutY="55.0" stylesheets="@MainWindowStyle.css" text="Nazwa:">
          <font>
             <Font size="16.0" />
          </font></Label>
-      <Label layoutX="264.0" layoutY="55.0" stylesheets="@MainWindowStyle.css" text="Powierzchnia">
+      <Label layoutX="264.0" layoutY="55.0" stylesheets="@MainWindowStyle.css" text="Powierzchnia:">
          <font>
             <Font size="16.0" />
          </font></Label>
-      <Label layoutX="457.0" layoutY="55.0" stylesheets="@MainWindowStyle.css" text="Produkt">
+      <Label layoutX="457.0" layoutY="55.0" stylesheets="@MainWindowStyle.css" text="Produkt:">
          <font>
             <Font size="16.0" />
          </font></Label>
-      <Label layoutX="626.0" layoutY="55.0" stylesheets="@MainWindowStyle.css" text="Akcesoria">
+      <Label layoutX="626.0" layoutY="55.0" stylesheets="@MainWindowStyle.css" text="Akcesoria:">
          <font>
             <Font size="16.0" />
          </font></Label>
@@ -44,19 +45,25 @@
       <ComboBox fx:id="cbSurface" layoutX="225.0" layoutY="90.0" prefWidth="170.0" styleClass="label" />
       <ComboBox fx:id="cbProduct" layoutX="400.0" layoutY="90.0" prefWidth="170.0" styleClass="label" />
       <ChoiceBox fx:id="cobAccessory" layoutX="575.0" layoutY="90.0" prefHeight="30.0" prefWidth="170.0" styleClass="label" />
-      <Button fx:id="btnAddModel" layoutX="355.0" layoutY="135.0" mnemonicParsing="false" onMouseClicked="#addModel" prefHeight="35.0" prefWidth="80.0" stylesheets="@OtherWindowStyle.css" text="Dodaj">
+      <Button fx:id="btnAddModel" layoutX="355.0" layoutY="135.0" mnemonicParsing="false" onMouseClicked="#addModel" prefHeight="34.0" prefWidth="80.0" stylesheets="@OtherWindowStyle.css" text="Dodaj">
          <font>
             <Font size="15.0" />
          </font></Button>
-      <Button layoutX="360.0" layoutY="475.0" mnemonicParsing="false" onMouseClicked="#deleteModel" prefHeight="35.0" prefWidth="80.0" stylesheets="@OtherWindowStyle.css" text="Usuń">
+      <Button layoutX="360.0" layoutY="475.0" mnemonicParsing="false" onMouseClicked="#deleteModel" stylesheets="@OtherWindowStyle.css" text="Usuń">
          <font>
             <Font size="15.0" />
          </font></Button>
-      <Button layoutX="185.0" layoutY="475.0" mnemonicParsing="false" onMouseClicked="#editModel" prefHeight="35.0" prefWidth="80.0" stylesheets="@OtherWindowStyle.css" text="Edytuj">
+      <Button layoutX="185.0" layoutY="475.0" mnemonicParsing="false" onMouseClicked="#editModel" stylesheets="@OtherWindowStyle.css" text="Edytuj">
          <font>
             <Font size="15.0" />
          </font></Button>
-      <Button fx:id="btHome" layoutX="15.0" layoutY="510.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" styleClass="buttonHome" />
-      <Button fx:id="btExit" layoutX="750.0" layoutY="510.0" mnemonicParsing="false" onAction="#Exit" prefHeight="30.0" prefWidth="30.0" styleClass="buttonExit" />
+      <Button fx:id="btHome" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="15.0" layoutY="510.0" mnemonicParsing="false" onAction="#Home" prefHeight="30.0" prefWidth="30.0" styleClass="buttonHome">
+         <effect>
+            <Glow level="1.0" />
+         </effect></Button>
+      <Button fx:id="btExit" layoutX="750.0" layoutY="510.0" mnemonicParsing="false" onAction="#Exit" prefHeight="30.0" prefWidth="30.0" styleClass="buttonExit">
+         <effect>
+            <Glow level="1.0" />
+         </effect></Button>
    </children>
 </AnchorPane>

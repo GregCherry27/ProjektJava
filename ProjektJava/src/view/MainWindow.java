@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -21,12 +22,12 @@ public class MainWindow extends Application {
     public void start(Stage primaryStage) throws Exception {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Database Application");
-
+        primaryStage.initStyle(StageStyle.UNDECORATED);
         showMainView();
     }
 
 
-    private void showMainView() throws IOException
+    public void showMainView() throws IOException
     {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(MainWindow.class.getResource("/view/MainWindow.fxml"));
@@ -38,6 +39,7 @@ public class MainWindow extends Application {
         Scene scene = new Scene(mainLayout);
         primaryStage.setScene(scene);
         primaryStage.show();
+        mainLayout.requestFocus();
     }
 
     public static void main(String[] args) throws SQLException

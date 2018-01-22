@@ -5,7 +5,6 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import model.Model;
 import model.Pdftest;
@@ -13,6 +12,7 @@ import model.Repository;
 import model.Surface;
 import model.*;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 public class ModelWindowController extends Repository{
@@ -175,24 +175,15 @@ public class ModelWindowController extends Repository{
         mainStage.close();
     }
 
-
-    private BorderPane mainBorderPane;
-
-    public void setMainBorderPane(BorderPane bp)
+    @FXML
+    public void Home()
     {
-        mainBorderPane = bp;
+        try {
+            mainWindow.showMainView();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-
-    /*@FXML
-    public void Home() throws IOException
-    {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(MainWindow.class.getResource("/view/MainWindow.fxml"));
-        mainBorderPane = loader.load();
-        Scene scene = new Scene(mainBorderPane);
-        mainStage.setScene(scene);
-        mainStage.show();
-    }*/
 
     @FXML
     public void editModel() throws SQLException

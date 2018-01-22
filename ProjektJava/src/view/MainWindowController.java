@@ -41,6 +41,7 @@ public class MainWindowController extends Repository{
         ProductWindowController pwc = loader.getController();
         pwc.setMainWindow(mainWindow);
         pwc.showProductTable();
+        pwc.setMainStage(mainStage);
         mainBorderPane.setCenter(mainItems);
     }
 
@@ -53,6 +54,7 @@ public class MainWindowController extends Repository{
         AccessoryWindowController awc = loader.getController();
         awc.setMainWindow(mainWindow);
         awc.showAccessoryTable();
+        awc.setMainStage(mainStage);
         mainBorderPane.setCenter(mainItems);
     }
 
@@ -66,7 +68,6 @@ public class MainWindowController extends Repository{
         mwc.setMainWindow(mainWindow);
         mwc.showModelTable();
         mwc.setMainStage(mainStage);
-        mwc.setMainBorderPane(mainBorderPane);
         mainBorderPane.setCenter(mainItems);
     }
 
@@ -79,6 +80,13 @@ public class MainWindowController extends Repository{
         SurfaceWindowController swc = loader.getController();
         swc.setMainWindow(mainWindow);
         swc.showSurfaceTable();
+        swc.setMainStage(mainStage);
         mainBorderPane.setCenter(mainItems);
+    }
+
+    @FXML
+    public void Exit()
+    {
+        mainStage.close();
     }
 }

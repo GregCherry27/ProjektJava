@@ -3,9 +3,11 @@ package view;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import model.Product;
 import model.Repository;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 public class ProductWindowController extends Repository{
@@ -24,6 +26,13 @@ public class ProductWindowController extends Repository{
     TextField temperatureTBox;
     @FXML
     TextField dosageTBox;
+
+    private Stage mainStage;
+
+    public void setMainStage(Stage pr)
+    {
+        mainStage = pr;
+    }
 
     private view.MainWindow mainWindow;
 
@@ -84,7 +93,23 @@ public class ProductWindowController extends Repository{
         }
     }
 
+    @FXML
+    public void Exit()
+    {
+        mainStage.close();
+    }
 
+    @FXML
+    public void Home()
+    {
+        try {
+            mainWindow.showMainView();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //TODO: dokończyć
     @FXML
     public void editNameProduct() throws SQLException
     {

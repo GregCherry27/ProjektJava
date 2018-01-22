@@ -3,10 +3,11 @@ package view;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import model.Product;
+import javafx.stage.Stage;
 import model.Repository;
 import model.Surface;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 public class SurfaceWindowController extends Repository{
@@ -21,6 +22,13 @@ public class SurfaceWindowController extends Repository{
     TextField nameTBox;
     @FXML
     TextArea commentTArea;
+
+    private Stage mainStage;
+
+    public void setMainStage(Stage pr)
+    {
+        mainStage = pr;
+    }
 
     private view.MainWindow mainWindow;
 
@@ -78,9 +86,25 @@ public class SurfaceWindowController extends Repository{
     }
 
     @FXML
+    public void Exit()
+    {
+        mainStage.close();
+    }
+
+    @FXML
+    public void Home()
+    {
+        try {
+            mainWindow.showMainView();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
     public void editSurface() throws SQLException
     {
-        TablePosition<Product, String> positionProduct = tableSurface.getSelectionModel().getSelectedCells().get(0);
+        TablePosition<Surface, String> positionProduct = tableSurface.getSelectionModel().getSelectedCells().get(0);
         int row = positionProduct.getRow();
         String selectedName = String.valueOf( nameColumn.getCellObservableValue(row).getValue());
         String selectedcomm = String.valueOf( commentsColumn.getCellObservableValue(row).getValue());

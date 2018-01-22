@@ -1,6 +1,7 @@
 .HBox
 {
     -fx-background-image: url("/files/main_backgorund.png");
+    -fx-shadow-highlight-color: transparent;
 }
 
 .menu-button
@@ -9,6 +10,7 @@
     -fx-font-weight: bold;
     -fx-font-size: 15px;
     -fx-background-image: url("/files/main_label_nc.png");
+    -fx-shadow-highlight-color: transparent;
 }
 
 .menu-button:focused
@@ -16,4 +18,5 @@
     -fx-text-fill: #071e07;
     -fx-font-weight: bold;
     -fx-background-image: url("/files/main_label_c.png");
+    -fx-shadow-highlight-color: transparent;
 }
